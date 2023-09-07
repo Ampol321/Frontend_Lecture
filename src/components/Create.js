@@ -15,8 +15,6 @@ const Create = () => {
         setState({ ...state, [name]: event.target.value });
     }
 
-   
-
     return (
         <div>
             <h1>Create Post</h1>
@@ -24,15 +22,15 @@ const Create = () => {
             <form>
                 <div className="form-group">
                     <label className='text-muted'>Title </label>
-                    <input type="text" className='form-control' placeholder='Post Title' required />
+                    <input onChange={handleChange('title')} value={title} type="text" className='form-control' placeholder='Post Title' required />
                 </div>
                 <div className='form-group'>
                     <label className='text-muted'>Content </label>
-                    <textarea type="text" className='form-control' placeholder='Write Something...' required />
+                    <textarea onChange={handleChange('content')} value={content} type="text" className='form-control' placeholder='Write Something...' required />
                 </div>
                 <div className="form-group">
                     <label className='text-muted'>User </label>
-                    <input type="text" className='form-control' placeholder='Your Name' required />
+                    <input onChange={handleChange('user')} value={user} type="text" className='form-control' placeholder='Your Name' required />
                 </div>
                 <div>
                     <button className='btn btn-primary' type='submit'>Create</button>

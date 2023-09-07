@@ -7,12 +7,9 @@ import Nav from './components/Nav';
 
 function App() {
   return (
-    <Router>
       <div className="App">
-        {/* <Create/> */}
         <Nav />
       </div>
-    </Router>
   );
 }
 

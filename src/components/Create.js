@@ -8,7 +8,7 @@ const Create = () => {
         user: ''
     });
 
-    const [title, content, user] = state;
+    const {title, content, user} = state;
 
     const handleChange = name => event => {
         console.log('name', name, 'event', event.target.value);
@@ -22,15 +22,15 @@ const Create = () => {
             <form>
                 <div className="form-group">
                     <label className='text-muted'>Title </label>
-                    <input onChange={handleChange('title')} value={title} type="text" className='form-control' placeholder='Post Title' required />
+                    <input type="text" className='form-control' placeholder='Post Title' required onChange={handleChange('title')} value={title}/>
                 </div>
                 <div className='form-group'>
                     <label className='text-muted'>Content </label>
-                    <textarea onChange={handleChange('content')} value={content} type="text" className='form-control' placeholder='Write Something...' required />
+                    <textarea type="text" className='form-control' placeholder='Write Something...' required onChange={handleChange('content')} value={content}/>
                 </div>
                 <div className="form-group">
                     <label className='text-muted'>User </label>
-                    <input onChange={handleChange('user')} value={user} type="text" className='form-control' placeholder='Your Name' required />
+                    <input type="text" className='form-control' placeholder='Your Name' required onChange={handleChange('user')} value={user}/>
                 </div>
                 <div>
                     <button className='btn btn-primary' type='submit'>Create</button>

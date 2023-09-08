@@ -7,11 +7,11 @@ import RoutedApp from './components/RoutedApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  <RoutedApp>
-    <App />
-  </RoutedApp>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <RoutedApp>
+      <App />
+    </RoutedApp>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

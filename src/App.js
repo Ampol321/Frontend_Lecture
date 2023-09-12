@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Title from './components/Title';
+import PostList from './components/PostList';
 
 function App() {
 
@@ -31,16 +32,17 @@ function App() {
   return (
     <div className="App ">
       <Nav />
-      <Title title='Welcome to my blog' user='John Wick'/>
+      <Title title='Welcome to my blog' user='John Wick' />
       {posts.map((post, i) => (
         <div className='container'>
-          <div className='row'>
+          <PostList post={post}/>
+          {/* <div className='row'>
             <h2 className='col-4'>{post.title}</h2>
             <p className='col-2'>{post.slug}</p>
             <p className='col-2'>{post.content}</p>
-          </div>
+          </div> */}
         </div>
-      ))};
+      ))}
     </div>
   );
 }

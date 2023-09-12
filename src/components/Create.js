@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Title from './Title';
 
 const Create = () => {
 
@@ -17,7 +18,7 @@ const Create = () => {
 
     return (
         <div>
-            <h1>Create Post</h1>
+            <Title name='Create a new post'/>
             <br />
             <form>
                 <div className="form-group">

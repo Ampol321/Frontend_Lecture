@@ -7,6 +7,7 @@ import Nav from './components/Nav';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Title from './components/Title';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="App ">
       <Nav />
+      <Title title='Welcome to my blog' user='John Wick'/>
       {posts.map((post, i) => (
         <div className='container'>
           <div className='row'>

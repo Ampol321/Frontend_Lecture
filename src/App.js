@@ -31,9 +31,9 @@ function App() {
 
   return (
     <div>
-      <Nav />
+      <Nav /><br/>
       <div className='container pb-5' >
-        <Title title='Welcome to my blog' user='John Wick' />
+        {/* <Title title='Welcome to my blog' user='John Wick' /> */}
         {posts.map((post, i) => (
           <div className='container'>
             <PostList post={post} /><br />

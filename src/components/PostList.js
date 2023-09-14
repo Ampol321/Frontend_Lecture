@@ -13,7 +13,7 @@ const PostList = ({ post }) => {
         <div>
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
-                    <Link to={`${post.slug}`}>
+                    <Link to={`/post/${post.id}`}>
                         <h2>{post.title}</h2>
                     </Link>
                     {/* <Typography variant='h3' gutterBottom>

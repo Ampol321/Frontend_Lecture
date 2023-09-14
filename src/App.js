@@ -30,19 +30,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App ">
+    <div>
       <Nav />
-      <Title title='Welcome to my blog' user='John Wick' />
-      {posts.map((post, i) => (
-        <div className='container'>
-          <PostList post={post}/>
-          {/* <div className='row'>
-            <h2 className='col-4'>{post.title}</h2>
-            <p className='col-2'>{post.slug}</p>
-            <p className='col-2'>{post.content}</p>
-          </div> */}
-        </div>
-      ))}
+      <div className='container pb-5' >
+        <Title title='Welcome to my blog' user='John Wick' />
+        {posts.map((post, i) => (
+          <div className='container'>
+            <PostList post={post} /><br />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

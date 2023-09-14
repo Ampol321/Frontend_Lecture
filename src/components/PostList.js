@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 
 const PostList = ({ post }) => {
@@ -12,9 +13,12 @@ const PostList = ({ post }) => {
         <div>
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
-                    <Typography variant='h3' gutterBottom>
+                    <Link to={`${post.slug}`}>
+                        <h2>{post.title}</h2>
+                    </Link>
+                    {/* <Typography variant='h3' gutterBottom>
                         {post.title}
-                    </Typography>
+                    </Typography> */}
                     <Typography variant="h5" color="text.secondary" component="div">
                         {post.slug}
                     </Typography>

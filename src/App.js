@@ -36,7 +36,7 @@ function App() {
         {/* <Title title='Welcome to my blog' user='John Wick' /> */}
         {posts.map((post, i) => (
           <div className='container'>
-            <PostList post={post} /><br />
+            <PostList post={post} key={post.id}/><br />
           </div>
         ))}
       </div>

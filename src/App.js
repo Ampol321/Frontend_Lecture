@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Title from './components/Title';
+import { Typography } from '@mui/material';
 import { PostList } from './components/PostList';
 
 function App() {
@@ -34,11 +35,11 @@ function App() {
       <Nav /><br />
       <div className='container pb-5' >
         {/* <Title title='Welcome to my blog' user='John Wick' /> */}
-        {posts.map((post, i) => (
+        {posts.length >0 ? posts.map((post, i) => (
           <div className='container'>
-            <PostList post={post} key={post.id} /><br />
+            <PostList post={post} key={post.id} fetchPosts={fetchPost}/><br />
           </div>
-        ))}
+        )):<Typography>No posts yet</Typography>}
       </div>
     </div>
   );

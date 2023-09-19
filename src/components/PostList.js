@@ -61,7 +61,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Stack from '@mui/material/Stack';
 import axios from 'axios';
 
-export const PostList = ({ post }) => {
+export const PostList = ({ post, fetchPosts }) => {
     const [open, setOpen] = useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -85,7 +85,7 @@ export const PostList = ({ post }) => {
             .delete(`http://127.0.0.1:8000/api/posts/${id}`)
             .then(response => {
                 // alert(response.data.status);
-                // fetchPosts();
+                fetchPosts();
             })
             .catch(error => alert('Error deleting post'));
     };

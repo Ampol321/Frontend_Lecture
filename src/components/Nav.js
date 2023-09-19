@@ -5,7 +5,7 @@ const Nav = () => {
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <Link className="navbar-brand" to="/"> <img src="/images/React.png" width="35" height="35" alt="" /></Link>
+                <Link className="navbar-brand" to="/"> <img src="/images/React.png" width="35" height="35g  " alt="" /></Link>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li className="nav-item">

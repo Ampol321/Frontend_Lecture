@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Title from './components/Title';
-import PostList from './components/PostList';
+import { PostList } from './components/PostList';
 
 function App() {
 
@@ -31,12 +31,12 @@ function App() {
 
   return (
     <div>
-      <Nav /><br/>
+      <Nav /><br />
       <div className='container pb-5' >
         {/* <Title title='Welcome to my blog' user='John Wick' /> */}
         {posts.map((post, i) => (
           <div className='container'>
-            <PostList post={post} key={post.id}/><br />
+            <PostList post={post} key={post.id} /><br />
           </div>
         ))}
       </div>

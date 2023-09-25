@@ -114,7 +114,7 @@ export const PostList = ({ post, fetchPosts }) => {
         </Dialog>
     }
     return (
-        <Card sx={{ minWidth: 275 }}>
+        <Card variant="outlined" sx={{ minWidth: 275 }}>
             <CardContent>
                 {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     {post.title}

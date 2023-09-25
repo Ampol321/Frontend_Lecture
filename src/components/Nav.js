@@ -51,7 +51,7 @@ const Nav = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <Link className="navbar-brand" to="/"> <img src="/images/React1.png" width="42" height="35g  " alt="" /></Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
@@ -59,7 +59,7 @@ const Nav = () => {
                             <Link className="nav-link" to="/create">Create</Link>
                         </li>
                     </ul>
-                    <Button variant="outlined" onClick={handleClickOpen}>Login</Button>
+                    <Button variant="contained" onClick={handleClickOpen}>Login</Button>
                     <Dialog open={open} onClose={handleClose}>
                         <DialogTitle>Login</DialogTitle>
                         <DialogContent>
@@ -89,7 +89,7 @@ const Nav = () => {
                             {/* </form> */}
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleSubmit}>Login</Button>
+                            <Button variant="outlined" onClick={handleSubmit}>Login</Button>
                         </DialogActions>
                     </Dialog>
                 </div>

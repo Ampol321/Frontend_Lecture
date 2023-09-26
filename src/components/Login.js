@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import axios from 'axios';
 import { authenticate } from './helpers';
+
 const Login = ({ openDialog, handleClose }) => {
     const [open, setOpen] = useState(openDialog)
     const [state, setState] = useState({
@@ -23,7 +24,7 @@ const Login = ({ openDialog, handleClose }) => {
     const handleSubmit = event => {
         console.log(event)
         event.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}/login`, { email, password }).then(response => {
+        axios.post(`http://127.0.0.1:8000/api/login`, { email, password }).then(response => {
             console.log(response);
             setOpen(false)
             authenticate(response, () => navigate("/create"));

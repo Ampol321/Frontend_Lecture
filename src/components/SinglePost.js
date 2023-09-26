@@ -17,6 +17,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import Nav from './Nav';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { getToken } from './helpers';
 
 
 const ExpandMore = styled((props) => {
@@ -33,22 +34,26 @@ const ExpandMore = styled((props) => {
 const SinglePost = () => {
     const [post, setPost] = useState({});
     const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-
     let { id } = useParams();
     console.log(id);
 
     const fetchPost = () => {
-        axios.get(`http://localhost:8000/api/posts/${id}`)
+        const config = {
+            headers: {
+                authorization: `Bearer ${getToken()}`
+            }
+        }
+        axios.get(`http://localhost:8000/api/posts/${id}`, config)
             .then(response => {
                 console.log(response.data);
                 setPost(response.data);
             })
             .catch(error => alert('Error Fetching Posts'));
-    }
+    };
+    
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
 
     useEffect(() => {
         fetchPost();

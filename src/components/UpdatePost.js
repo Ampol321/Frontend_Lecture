@@ -4,8 +4,14 @@ import { Container } from '@mui/material'
 import Title from './Title'
 import axios from 'axios'
 import { useNavigate, useParams } from "react-router-dom";
+import { getToken } from './helpers';
 
 const UpdatePost = () => {
+    const config = {
+        headers: {
+            authorization: `Bearer ${getToken()}`
+        }
+    }
 
     const [state, setState] = useState({
         title: '',
@@ -20,7 +26,7 @@ const UpdatePost = () => {
     let navigate = useNavigate();
     useEffect(() => {
         axios
-            .get(`http://127.0.0.1:8000/api/posts/${id}/edit`)
+            .get(`http://127.0.0.1:8000/api/posts/${id}/edit`, config)
             .then(response => {
                 const { title, content, slug, user, user_id } = response.data;
                 setState({ ...state, title, content, slug, user, userId: user_id });
@@ -102,23 +108,6 @@ const UpdatePost = () => {
                 <Title name='Update a post' />
                 <br />
                 {showUpdateForm()}
-                {/* <form>
-                    <div className="form-group">
-                        <label className='text-muted'>Title </label>
-                        <input type="text" className='form-control' placeholder='Post Title' required />
-                    </div>
-                    <div className='form-group'>
-                        <label className='text-muted'>Content </label>
-                        <textarea type="text" className='form-control' placeholder='Write Something...' required />
-                    </div>
-                    <div className="form-group">
-                        <label className='text-muted'>User </label>
-                        <input type="text" className='form-control' placeholder='Your Name' required />
-                    </div>
-                    <div>
-                        <button className='btn btn-primary' type='submit'>Update</button>
-                    </div>
-                </form> */}
             </Container>
         </div>
     )

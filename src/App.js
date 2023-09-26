@@ -1,19 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Create from './components/Create';
 import Nav from './components/Nav';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Title from './components/Title';
 import { Typography } from '@mui/material';
 import { PostList } from './components/PostList';
 
 function App() {
 
   const [posts, setPosts] = useState([]);
+  const config = {
+    headers:{
+      //  authorization: `Bearer ${getToken()}`
+    }
+  }
 
   const fetchPost = () => {
     axios
@@ -29,6 +29,7 @@ function App() {
   useEffect(() => {
     fetchPost();
   }, []);
+  console.log(posts)
 
   return (
     <div>

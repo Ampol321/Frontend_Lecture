@@ -10,7 +10,8 @@ const Create = () => {
     const [state, setState] = useState({
         title: '',
         content: '',
-        user: ''
+        user: '',
+        userId: ''
     });
 
     const navigate = useNavigate()
